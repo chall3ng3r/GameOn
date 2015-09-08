@@ -1,2 +1,2 @@
 # GameOn
-Run Unity3D game from browser with a click!
+Run Unity3D games from browser without plugin!
