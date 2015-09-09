@@ -10,6 +10,7 @@ So, it took me couple of nights to make and polish (a bit) the GameOn applicatio
 
 # How It Works?
 The solution is that end-user install this tiny GameOn application on PC, the concept is just like Steam. This application will handle the click from browser and start the game outside the browser, in new window. 
+![GomeOn](https://github.com/chall3ng3r/GameOn/blob/master/Media/GameOn-demo.gif?raw=true)
 
 Installing GameOn is one-time process, afterwards users can just click on websites which have GameOn enabled links to start playing games. 
 
