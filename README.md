@@ -9,7 +9,8 @@ There was this small conversation on Twitter about a month ago, and I immediatel
 So, it took me couple of nights to make and polish (a bit) the GameOn application. Currently its only for Windows, and I am planning for MacOS and Linux versions with help from Unity3D developer community. If you want to contribute, you're most welcome :)
 
 # How It Works?
-The solution is that end-user install this tiny GameOn application on PC, the concept is just like Steam. This application will handle the click from browser and start the game outside the browser, in new window. 
+The solution is that end-user install this tiny GameOn application on PC, the concept is just like Steam. This application will handle the click from browser and start the game outside the browser, in new window.
+
 ![GomeOn](https://github.com/chall3ng3r/GameOn/blob/master/Media/GameOn-demo.gif?raw=true)
 
 Installing GameOn is one-time process, afterwards users can just click on websites which have GameOn enabled links to start playing games. 
