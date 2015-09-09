@@ -1,7 +1,7 @@
 # GameOn
 GameOn is an Open Source solution to playing Unity3D games outside the browser, with a-click, and still keeping the ```.unity3d``` file hosted on developer's server. Perfect for indie developers and game portals. 
 
-Install GameOn from Releases folder, and [try demoes here](https://dl.dropboxusercontent.com/u/175621/GameOn/game-demos.html)
+Install [GameOn from Releases](https://github.com/chall3ng3r/GameOn/blob/master/Releases/GameOn_0_9_setup.zip?raw=true) folder, and [try demoes here](https://dl.dropboxusercontent.com/u/175621/GameOn/game-demos.html)
 
 There was this small conversation on Twitter about a month ago, and I immediately got an idea.
 ![Twitter Ref](https://github.com/chall3ng3r/GameOn/blob/master/Media/twitter_ref.png?raw=true)
