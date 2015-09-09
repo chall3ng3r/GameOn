@@ -7,11 +7,11 @@ There was this small conversation on Twitter about a month ago, and I immediatel
 So, it took me couple of nights to make and polish (a bit) the GameOn application. Currently its only for Windows, and I am planning for MacOS and Linux versions with help from Unity3D developer community. If you want to contribute, you're most welcome :)
 
 # How It Works?
-The solution is that end-user install this tiny GameOn application on PC, the concept it just like Steam. This will handle the click from browser and start the game in an new Windows application. 
+The solution is that end-user install this tiny GameOn application on PC, the concept is just like Steam. This application will handle the click from browser and start the game outside the browser, in new window. 
 
-Installing GameOn is one-time process, afterwards, users can just click on website which have GameOn enabled link to start the game. 
+Installing GameOn is one-time process, afterwards users can just click on websites which have GameOn enabled links to start playing games. 
 
-GameOn resigters itself as ```gameon://``` URL scheme handler when installed. There's also a wrapper Windows application which is launched when user clicks GameOn enabled links. This application is just holds Unity Web Player ActiveX control, and it parses the clicked URL, formats it, and passes on to Unity Web Player. 
+GameOn resigters itself as ```gameon://``` URL scheme handler when installed. There's also a wrapper Windows application which is launched when user clicks GameOn enabled links. This application just holds Unity Web Player ActiveX control, and parses the clicked URL, formats it, and passes it on to Unity Web Player. 
 
 # For Developers
 Adding GameOn to your website or portal is pretty simple.
@@ -25,10 +25,10 @@ For GameOn, you simply make links like:
 <a href="gameon://website.com/game_demo.unity3d?640,460">Play Game</a>
 ```
 
-The important things to note:
-- Provide absolute URL to your ```.unity3d``` file, replacing ```http``` with ```gameon```
-- Pass ```with,height``` as querysting with the URL, for player window size
+Important things to note:
+- Always use absolute URL to your ```.unity3d``` file, replacing ```http://``` with ```gameon://```
+- Pass ```width,height``` as querysting with the URL, for player window size. Default is 640x480
 
 That's it!
 
-P.S. as this is the first release, few things are not yet final, like icon and URL parameters for window size.
+P.S. as this is the first release, few things are not yet final, like icon and URL parameters for window size. Source code will be posted later on, for now install and send me feedback.
