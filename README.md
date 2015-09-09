@@ -30,3 +30,5 @@ The important things to note:
 - Pass ```with,height``` as querysting with the URL, for player window size
 
 That's it!
+
+P.S. as this is the first release, few things are not yet final, like icon and URL parameters for window size.
