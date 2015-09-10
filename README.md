@@ -35,4 +35,7 @@ Important things to note:
 
 That's it!
 
-P.S. as this is the first release, few things are not yet final, like icon and URL parameters for window size. Source code will be posted later on, for now install and send me feedback.
+P.S. as this is the first release, few things are not yet final, like icon and URL parameters for window size.
+
+# Contribute
+GameOn is developed with Visual Studio 2015 Community edition. Use the same version to open and work with this project.
