@@ -40,4 +40,4 @@ P.S. as this is the first release, few things are not yet final, like icon and U
 # Contribute
 GameOn is developed with Visual Studio 2015 Community edition. Use the same version to open and work with this project.
 
-The installer is made with NSIS, the script is in Installer folder.
+The installer is made with NSIS, and script is in Installer folder.
