@@ -17,6 +17,15 @@ Installing GameOn is one-time process, afterwards users can just click on websit
 
 GameOn resigters itself as ```gameon://``` URL scheme handler when installed. There's also a wrapper Windows application which is launched when user clicks GameOn enabled links. This application just holds Unity Web Player ActiveX control, and parses the clicked URL, formats it, and passes it on to Unity Web Player. 
 
+# What's New
+Version 0.9.2048
+- pass "size=width,height" in URL to set window size
+- proper handling of URL
+- updated binary release
+- cleaned unused references
+- installer script updated
+- demo HTML page updated with link samples
+
 # For Developers
 Adding GameOn to your website or portal is pretty simple.
 
@@ -26,12 +35,12 @@ Before you made link to a page with embeded Unity Web Player like:
 ```
 For GameOn, you simply make links like:
 ```
-<a href="gameon://website.com/game_demo.unity3d?640,460">Play Game</a>
+<a href="gameon://website.com/game_demo.unity3d?size=800,600">Play Game</a>
 ```
 
 Important things to note:
 - Always use absolute URL to your ```.unity3d``` file, replacing ```http://``` with ```gameon://```
-- Pass ```width,height``` as querysting with the URL, for player window size. Default is 640x480
+- Pass ```size=width,height``` as querysting with the URL, for player window size. Default is 640x480
 
 That's it!
 
@@ -40,4 +49,4 @@ P.S. as this is the first release, few things are not yet final, like icon and U
 # Contribute
 GameOn is developed with Visual Studio 2015 Community edition. Use the same version to open and work with this project.
 
-The installer is made with NSIS, and script is in Installer folder. One thing to note, I used ILMerge to merge VS generated ActiveX support binaries with the main executeable. I will update the installer script to include those binaries in next update without merge. For now, use the version in Releases folder.
+The installer is made with NSIS, and script is in Installer folder.
