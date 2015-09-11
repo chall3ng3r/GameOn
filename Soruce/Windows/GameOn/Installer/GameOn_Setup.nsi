@@ -40,6 +40,9 @@ Section "GameOn for Unity" Section1
 	SetOutPath "$INSTDIR\"
 	File "..\Staging\GameOn.exe"
 	File "..\Staging\GameOn.exe.config"
+	File "..\Staging\AxInterop.UnityWebPlayerAXLib.dll"
+	File "..\Staging\Interop.UnityWebPlayerAXLib.dll"
+	
 	CreateShortCut "$DESKTOP\GameOn.lnk" "$INSTDIR\GameOn.exe"
 	CreateDirectory "$SMPROGRAMS\GameOn for Unity"
 	CreateShortCut "$SMPROGRAMS\GameOn for Unity\GameOn.lnk" "$INSTDIR\GameOn.exe"
@@ -86,6 +89,8 @@ Section Uninstall
 	; Clean up GameOn for Unity
 	Delete "$INSTDIR\GameOn.exe"
 	Delete "$INSTDIR\GameOn.exe.config"
+	Delete "$INSTDIR\AxInterop.UnityWebPlayerAXLib.dll"
+	Delete "$INSTDIR\Interop.UnityWebPlayerAXLib.dll"
 
 	; Remove remaining directories
 	RMDir "$SMPROGRAMS\GameOn for Unity"

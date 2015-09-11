@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Linq;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Web;
 using System.Windows.Forms;
 
 namespace GameOn
@@ -27,31 +23,33 @@ namespace GameOn
             {
                 try
                 {
-                    // TODO: replace with regex for better parsing
+                    // make http URI
                     Uri uri = new Uri(s);
-                    //Console.WriteLine("arg: " + s);
+
                     string strURL = "http://";
                     strURL += uri.GetComponents(UriComponents.HostAndPort, UriFormat.UriEscaped);
                     strURL += "/" + uri.GetComponents(UriComponents.Path, UriFormat.UriEscaped);
 
-                    // get size from querystring
-                    string[] query = uri.GetComponents(UriComponents.Query, UriFormat.Unescaped).Split(',');
+                    // window size from querystring
+                    NameValueCollection queryVars = ParseQueryString(uri.GetComponents(UriComponents.Query, UriFormat.Unescaped));
+                    string size = queryVars.Get("size");
 
-                    switch (query.Length)
+                    if(!string.IsNullOrEmpty(size))
                     {
-                        case 1:
-                            if (query[0] == "fullscreen")
-                                f.WindowState = FormWindowState.Maximized;
-                            break;
-                        case 2:
-                            int w = Convert.ToInt32(query[0]);
-                            int h = Convert.ToInt32(query[1]);
+                        // maximize
+                        if (size.ToLower() == "fullscreen")
+                        {
+                            f.WindowState = FormWindowState.Maximized;
+                        }
+                        // resize window to specified width,height
+                        else
+                        {
+                            int w = Convert.ToInt32(size.Split(',')[0]);
+                            int h = Convert.ToInt32(size.Split(',')[1]);
 
                             f.Width = w;
                             f.Height = h;
-                            break;
-                        default:
-                            break;
+                        }
                     }
 
                     f.initUnity(strURL);
@@ -64,5 +62,27 @@ namespace GameOn
 
             Application.Run(f);
         }
+
+        public static NameValueCollection ParseQueryString(string s)
+        {
+            NameValueCollection nvc = new NameValueCollection();
+
+            foreach (string vp in Regex.Split(s, "&"))
+            {
+                string[] singlePair = Regex.Split(vp, "=");
+                if (singlePair.Length == 2)
+                {
+                    nvc.Add(singlePair[0], singlePair[1]);
+                }
+                else
+                {
+                    // only one key with no value specified in query string
+                    nvc.Add(singlePair[0], string.Empty);
+                }
+            }
+
+            return nvc;
+        }
+
     }
 }
