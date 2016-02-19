@@ -31,7 +31,28 @@ OutFile "GameOn_0_9_setup.exe"
 ; Installer Icon
 Icon "..\Graphics\Pixelkit-Gentle-Edges-Game-Controller.ico"
 
+RequestExecutionLevel admin
+
+Function .onInit
+	# call UserInfo plugin to get user info.  The plugin puts the result in the stack
+	UserInfo::getAccountType
+
+	# pop the result from the stack into $0
+	Pop $0
+
+	# compare the result with the string "Admin" to see if the user is admin.
+	# If match, jump 2 lines down (return).
+	StrCmp $0 "Admin" +2
+
+	# if there is not a match, print message and return
+	MessageBox MB_OK "User $0 is not an administrator.$\r$\n\
+			Installer may not have permissions to copy necessary files and installation may fail."
+	Return
+FunctionEnd
+
 Section "GameOn for Unity" Section1
+
+	SetShellVarContext all
 
 	; Set Section properties
 	SetOverwrite on
@@ -72,6 +93,8 @@ SectionEnd
 
 ;Uninstall section
 Section Uninstall
+
+	SetShellVarContext all
 
 	;Remove from registry...
 	DeleteRegKey HKEY_CLASSES_ROOT "gameon"
