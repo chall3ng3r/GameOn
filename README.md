@@ -3,10 +3,7 @@ GameOn is an Open Source solution to playing Unity3D games outside the browser, 
 
 Install [GameOn from Releases](https://github.com/chall3ng3r/GameOn/blob/master/Releases/GameOn_0_9_setup.zip?raw=true) folder, and [try demoes here](https://dl.dropboxusercontent.com/u/175621/GameOn/game-demos.html)
 
-There was this small conversation on Twitter about a month ago, and I immediately got an idea.
-![Twitter Ref](https://github.com/chall3ng3r/GameOn/blob/master/Media/twitter_ref.png?raw=true)
-
-So, it took me couple of nights to make and polish (a bit) the GameOn application. Currently its only for Windows, and I am planning for MacOS and Linux versions with help from Unity3D developer community. If you want to contribute, you're most welcome :)
+Currently its only for Windows, and I am planning for MacOS and Linux versions with help from Unity3D developer community. If you want to contribute, you're most welcome :)
 
 # How It Works?
 The solution is that end-user install this tiny GameOn application on PC, the concept is just like Steam. This application will handle the click from browser and start the game outside the browser, in new window.
